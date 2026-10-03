@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUNARIA · Moda minimalista</title>
+  <!-- Google Fonts para elegancia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome para íconos sutiles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #faf9f7;
+      color: #1e1e1e;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Contenedor principal */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header minimalista */
+    header {
+      padding: 28px 0 20px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      background-color: #faf9f7;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+      background-color: rgba(250, 249, 247, 0.85);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #1e1e1e;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .logo span {
+      font-weight: 300;
+      color: #9b8c7c;
+    }
+
+    .logo:hover {
+      opacity: 0.7;
+    }
+
+    nav {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1e1e1e;
+      font-weight: 400;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    nav a:hover {
+      color: #9b8c7c;
+      border-bottom-color: #9b8c7c;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-icons i {
+      font-size: 20px;
+      color: #1e1e1e;
+      transition: color 0.2s;
+      cursor: default;
+    }
+
+    .nav-icons i:hover {
+      color: #9b8c7c;
+    }
+
+    /* Banner principal (hero) */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f2efea;
+      margin: 40px 0 60px;
+      border-radius: 0; /* estilo editorial */
+      padding: 60px 56px;
+      position: relative;
+      overflow: hidden;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .hero-content {
+      flex: 1 1 320px;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #9b8c7c;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 8vw, 72px);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      color: #1e1e1e;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      font-weight: 300;
+      color: #9b8c7c;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #4a4a4a;
+      max-width: 400px;
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #1e1e1e;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 42px;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 1px solid #1e1e1e;
+      transition: all 0.25s ease;
+      font-weight: 400;
+    }
+
+    .btn:hover {
+      background-color: transparent;
+      color: #1e1e1e;
+    }
+
+    .hero-image {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 280px;
+      background: #e2dbd2;
+      border-radius: 50% 50% 30% 70% / 40% 30% 70% 60%;
+      position: relative;
+    }
+
+    .hero-image i {
+      font-size: 140px;
+      color: #cbb9a6;
+      opacity: 0.8;
+      transform: rotate(-10deg);
+    }
+
+    /* Banner secundario — colección */
+    .banner-secondary {
+      background: #e2dbd2;
+      padding: 50px 40px;
+      margin-bottom: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      border-radius: 0;
+      transition: all 0.3s;
+    }
+
+    .banner-secondary h2 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: #1e1e1e;
+      text-transform: uppercase;
+    }
+
+    .banner-secondary h2 span {
+      font-weight: 500;
+      color: #9b8c7c;
+    }
+
+    .banner-secondary .btn {
+      background: transparent;
+      color: #1e1e1e;
+      border: 1px solid #1e1e1e;
+      padding: 12px 36px;
+    }
+
+    .banner-secondary .btn:hover {
+      background: #1e1e1e;
+      color: #fff;
+    }
+
+    /* Sección de productos */
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .section-title h2 {
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .section-title a {
+      text-decoration: none;
+      color: #9b8c7c;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 1px solid #9b8c7c;
+      padding-bottom: 4px;
+      transition: opacity 0.2s;
+    }
+
+    .section-title a:hover {
+      opacity: 0.6;
+    }
+
+    /* Grid de productos */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px 24px;
+      margin-bottom: 80px;
+    }
+
+    .product-card {
+      background: transparent;
+      transition: transform 0.2s ease;
+      text-align: left;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .product-image {
+      background-color: #f2efea;
+      aspect-ratio: 3 / 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      overflow: hidden;
+      transition: background-color 0.3s;
+      border-radius: 0; /* cuadrado minimalista */
+    }
+
+    .product-image i {
+      font-size: 60px;
+      color: #cbb9a6;
+      opacity: 0.8;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-image i {
+      transform: scale(1.1);
+    }
+
+    .product-info h3 {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      color: #1e1e1e;
+    }
+
+    .product-info .price {
+      font-size: 15px;
+      font-weight: 400;
+      color: #9b8c7c;
+      letter-spacing: 0.5px;
+    }
+
+    /* Banner de envío / beneficio */
+    .benefit-banner {
+      background: #1e1e1e;
+      color: #faf9f7;
+      padding: 40px 32px;
+      margin: 60px 0 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      border-radius: 0;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1 1 200px;
+    }
+
+    .benefit-item i {
+      font-size: 28px;
+      color: #cbb9a6;
+    }
+
+    .benefit-item p {
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    .benefit-item strong {
+      font-weight: 500;
+      color: #fff;
+      display: block;
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+
+    /* Footer minimalista */
+    footer {
+      padding: 48px 0 32px;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      font-size: 14px;
+      color: #6b6b6b;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #6b6b6b;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #1e1e1e;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-icons i {
+      font-size: 18px;
+      color: #6b6b6b;
+      transition: color 0.2s;
+      cursor: default;
+    }
+
+    .social-icons i:hover {
+      color: #1e1e1e;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .hero {
+        padding: 40px 28px;
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-image {
+        width: 100%;
+        min-height: 200px;
+      }
+
+      .hero-image i {
+        font-size: 90px;
+      }
+
+      .banner-secondary {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 24px;
+      }
+
+      .benefit-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+      }
+
+      .benefit-item {
+        width: 100%;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .logo {
+        font-size: 22px;
+        letter-spacing: 4px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .product-grid {
+        gap: 30px 16px;
+      }
+
+      .section-title h2 {
+        font-size: 22px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">LUNARIA<span>.</span></a>
+      <nav>
+        <a href="#">Tienda</a>
+        <a href="#">Colecciones</a>
+        <a href="#">Nosotros</a>
+        <div class="nav-icons">
+          <i class="fas fa-search"></i>
+          <i class="far fa-heart"></i>
+          <i class="fas fa-shopping-bag"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Banner principal (hero) -->
+    <div class="container">
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-tag">Nueva temporada</div>
+          <h1>Elegancia <em>en</em> lo simple</h1>
+          <p>Prendas atemporales, tejidos naturales y siluetas que respiran calma.</p>
+          <a href="#" class="btn">Explorar</a>
+        </div>
+        <div class="hero-image">
+          <i class="fas fa-tshirt"></i>
+        </div>
+      </section>
+    </div>
+
+    <!-- Banner secundario: colección destacada -->
+    <div class="container">
+      <div class="banner-secondary">
+        <h2>Colección <span>Otoño</span> 2025</h2>
+        <a href="#" class="btn">Ver ahora</a>
+      </div>
+    </div>
+
+    <!-- Sección de productos -->
+    <div class="container">
+      <div class="section-title">
+        <h2>Esenciales</h2>
+        <a href="#">Ver todo</a>
+      </div>
+
+      <div class="product-grid">
+        <!-- Producto 1 -->
+        <div class="product-card">
+          <div class="product-image">
+            <i class="fas fa-vest"></i>
+          </div>
+          <div class="product-info">
+            <h3>Blazer Lino</h3>
+            <div class="price">$189</div>
+          </div>
+        </div>
+        <!-- Producto 2 -->
+        <div class="product-card">
+          <div class="product-image">
+            <i class="fas fa-tshirt"></i>
+          </div>
+          <div class="product-info">
+            <h3>Camiseta Pima</h3>
+            <div class="price">$65</div>
+          </div>
+        </div>
+        <!-- Producto 3 -->
+        <div class="product-card">
+          <div class="product-image">
+            <i class="fas fa-shoe-prints"></i>
+          </div>
+          <div class="product-info">
+            <h3>Mocasín Suave</h3>
+            <div class="price">$210</div>
+          </div>
+        </div>
+        <!-- Producto 4 -->
+        <div class="product-card">
+          <div class="product-image">
+            <i class="fas fa-shopping-bag"></i>
+          </div>
+          <div class="product-info">
+            <h3>Bolso Tote</h3>
+            <div class="price">$145</div>
+          </div>
+        </div>
+        <!-- Producto 5 (extra para grid adaptable) -->
+        <div class="product-card">
+          <div class="product-image">
+            <i class="fas fa-socks"></i>
+          </div>
+          <div class="product-info">
+            <h3>Calcetines Algodón</h3>
+            <div class="price">$18</div>
+          </div>
+        </div>
+        <!-- Producto 6 -->
+        <div class="product-card">
+          <div class="product-image">
+            <i class="fas fa-hat-cowboy"></i>
+          </div>
+          <div class="product-info">
+            <h3>Sombrero Lana</h3>
+            <div class="price">$95</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner de beneficios / envío -->
+    <div class="container">
+      <div class="benefit-banner">
+        <div class="benefit-item">
+          <i class="fas fa-truck"></i>
+          <div>
+            <strong>Envío gratis</strong>
+            <p>En compras superiores a $150</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-undo-alt"></i>
+          <div>
+            <strong>Devolución fácil</strong>
+            <p>30 días para cambios</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-leaf"></i>
+          <div>
+            <strong>Materiales sostenibles</strong>
+            <p>Fibras naturales certificadas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="container">
+    <div class="footer-links">
+      <a href="#">Envíos</a>
+      <a href="#">Devoluciones</a>
+      <a href="#">Guía de tallas</a>
+      <a href="#">Contacto</a>
+    </div>
+    <div class="social-icons">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-pinterest"></i>
+      <i class="fab fa-tiktok"></i>
+    </div>
+    <div class="copyright">
+      © 2025 LUNARIA — Moda consciente
+    </div>
+  </footer>
+
+</body>
+</html>
