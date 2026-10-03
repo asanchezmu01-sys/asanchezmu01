@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LUNARIA · Moda minimalista</title>
-  <!-- Google Fonts para elegancia -->
+  <title>AURUM & ARGENTUM · Joyería fina</title>
+  <!-- Google Fonts: elegante y moderna -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
-  <!-- Font Awesome para íconos sutiles -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome para íconos finos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -19,13 +19,17 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #faf9f7;
-      color: #1e1e1e;
+      background-color: #fcfaf8;
+      color: #1a1a1a;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Contenedor principal */
+    /* Tipografía elegante para títulos */
+    h1, h2, h3, .logo, .hero-tag, .price {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
     .container {
       max-width: 1280px;
       margin: 0 auto;
@@ -34,14 +38,14 @@
 
     /* Header minimalista */
     header {
-      padding: 28px 0 20px;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      background-color: #faf9f7;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      background-color: #fcfaf8;
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 100;
       backdrop-filter: blur(8px);
-      background-color: rgba(250, 249, 247, 0.85);
+      background-color: rgba(252, 250, 248, 0.9);
     }
 
     .header-inner {
@@ -53,18 +57,17 @@
     }
 
     .logo {
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 500;
-      letter-spacing: 6px;
-      text-transform: uppercase;
-      color: #1e1e1e;
+      letter-spacing: 4px;
+      color: #1a1a1a;
       text-decoration: none;
       transition: opacity 0.2s;
     }
 
     .logo span {
       font-weight: 300;
-      color: #9b8c7c;
+      color: #b8a28e;
     }
 
     .logo:hover {
@@ -73,16 +76,16 @@
 
     nav {
       display: flex;
-      gap: 36px;
+      gap: 32px;
       align-items: center;
     }
 
     nav a {
       text-decoration: none;
-      color: #1e1e1e;
+      color: #1a1a1a;
       font-weight: 400;
-      font-size: 15px;
-      letter-spacing: 0.5px;
+      font-size: 14px;
+      letter-spacing: 1px;
       text-transform: uppercase;
       transition: color 0.2s;
       border-bottom: 1px solid transparent;
@@ -90,153 +93,210 @@
     }
 
     nav a:hover {
-      color: #9b8c7c;
-      border-bottom-color: #9b8c7c;
+      color: #b8a28e;
+      border-bottom-color: #b8a28e;
     }
 
     .nav-icons {
       display: flex;
-      gap: 24px;
+      gap: 22px;
       align-items: center;
     }
 
     .nav-icons i {
-      font-size: 20px;
-      color: #1e1e1e;
+      font-size: 19px;
+      color: #1a1a1a;
       transition: color 0.2s;
       cursor: default;
     }
 
     .nav-icons i:hover {
-      color: #9b8c7c;
+      color: #b8a28e;
     }
 
-    /* Banner principal (hero) */
-    .hero {
+    /* SLIDER DE BANNERS */
+    .slider-section {
+      margin: 32px 0 56px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    .slider-container {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+
+    .slide {
+      min-width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #f2efea;
-      margin: 40px 0 60px;
-      border-radius: 0; /* estilo editorial */
-      padding: 60px 56px;
-      position: relative;
-      overflow: hidden;
       flex-wrap: wrap;
       gap: 40px;
+      padding: 64px 56px;
+      position: relative;
     }
 
-    .hero-content {
-      flex: 1 1 320px;
-      z-index: 2;
+    /* Slide 1 - Oro */
+    .slide-1 {
+      background: #f3ede8;
     }
 
-    .hero-tag {
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      color: #9b8c7c;
-      margin-bottom: 16px;
-      font-weight: 500;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 8vw, 72px);
+    .slide-1 .slide-text h1 {
+      font-size: clamp(38px, 7vw, 68px);
       font-weight: 400;
       line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 24px;
-      color: #1e1e1e;
+      letter-spacing: -0.01em;
+      color: #1a1a1a;
+      margin-bottom: 20px;
     }
 
-    .hero h1 em {
-      font-style: normal;
+    .slide-1 .slide-text h1 em {
+      font-style: italic;
       font-weight: 300;
-      color: #9b8c7c;
+      color: #b8a28e;
     }
 
-    .hero p {
-      font-size: 18px;
+    .slide-1 .slide-text p {
+      font-size: 17px;
       color: #4a4a4a;
       max-width: 400px;
       margin-bottom: 32px;
       font-weight: 300;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .slide-1 .slide-image i {
+      font-size: 140px;
+      color: #d4c5b5;
+      opacity: 0.9;
+    }
+
+    /* Slide 2 - Plata */
+    .slide-2 {
+      background: #eae7e3;
+    }
+
+    .slide-2 .slide-text h1 {
+      font-size: clamp(38px, 7vw, 68px);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+    }
+
+    .slide-2 .slide-text h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: #9e9e9e;
+    }
+
+    .slide-2 .slide-text p {
+      font-size: 17px;
+      color: #4a4a4a;
+      max-width: 400px;
+      margin-bottom: 32px;
+      font-weight: 300;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .slide-2 .slide-image i {
+      font-size: 140px;
+      color: #c0c0c0;
+      opacity: 0.9;
+    }
+
+    /* Slide 3 - Colección mixta */
+    .slide-3 {
+      background: #f0ebe6;
+    }
+
+    .slide-3 .slide-text h1 {
+      font-size: clamp(38px, 7vw, 68px);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+    }
+
+    .slide-3 .slide-text h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: #b8a28e;
+    }
+
+    .slide-3 .slide-text p {
+      font-size: 17px;
+      color: #4a4a4a;
+      max-width: 400px;
+      margin-bottom: 32px;
+      font-weight: 300;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .slide-3 .slide-image i {
+      font-size: 140px;
+      color: #c2b2a0;
+      opacity: 0.9;
+    }
+
+    .slide-text {
+      flex: 1 1 340px;
+      z-index: 2;
+    }
+
+    .slide-image {
+      flex: 1 1 260px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
     }
 
     .btn {
       display: inline-block;
-      background-color: #1e1e1e;
+      background-color: #1a1a1a;
       color: #fff;
       text-decoration: none;
-      padding: 14px 42px;
-      font-size: 15px;
-      letter-spacing: 1px;
+      padding: 14px 44px;
+      font-size: 14px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      border: 1px solid #1e1e1e;
+      border: 1px solid #1a1a1a;
       transition: all 0.25s ease;
       font-weight: 400;
+      font-family: 'Inter', sans-serif;
     }
 
     .btn:hover {
       background-color: transparent;
-      color: #1e1e1e;
+      color: #1a1a1a;
     }
 
-    .hero-image {
-      flex: 1 1 300px;
+    /* Navegación del slider */
+    .slider-dots {
       display: flex;
       justify-content: center;
-      align-items: center;
-      min-height: 280px;
-      background: #e2dbd2;
-      border-radius: 50% 50% 30% 70% / 40% 30% 70% 60%;
-      position: relative;
+      gap: 14px;
+      margin-top: 20px;
     }
 
-    .hero-image i {
-      font-size: 140px;
-      color: #cbb9a6;
-      opacity: 0.8;
-      transform: rotate(-10deg);
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #d4c5b5;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      padding: 0;
     }
 
-    /* Banner secundario — colección */
-    .banner-secondary {
-      background: #e2dbd2;
-      padding: 50px 40px;
-      margin-bottom: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 24px;
-      border-radius: 0;
-      transition: all 0.3s;
-    }
-
-    .banner-secondary h2 {
-      font-size: clamp(28px, 5vw, 42px);
-      font-weight: 300;
-      letter-spacing: 2px;
-      color: #1e1e1e;
-      text-transform: uppercase;
-    }
-
-    .banner-secondary h2 span {
-      font-weight: 500;
-      color: #9b8c7c;
-    }
-
-    .banner-secondary .btn {
-      background: transparent;
-      color: #1e1e1e;
-      border: 1px solid #1e1e1e;
-      padding: 12px 36px;
-    }
-
-    .banner-secondary .btn:hover {
-      background: #1e1e1e;
-      color: #fff;
+    .dot.active {
+      background-color: #1a1a1a;
+      transform: scale(1.2);
     }
 
     /* Sección de productos */
@@ -244,34 +304,35 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 40px;
+      margin: 60px 0 40px;
       flex-wrap: wrap;
       gap: 16px;
     }
 
     .section-title h2 {
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 400;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       text-transform: uppercase;
+      font-family: 'Cormorant Garamond', serif;
     }
 
     .section-title a {
       text-decoration: none;
-      color: #9b8c7c;
-      font-size: 14px;
+      color: #b8a28e;
+      font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      border-bottom: 1px solid #9b8c7c;
+      border-bottom: 1px solid #b8a28e;
       padding-bottom: 4px;
       transition: opacity 0.2s;
+      font-family: 'Inter', sans-serif;
     }
 
     .section-title a:hover {
       opacity: 0.6;
     }
 
-    /* Grid de productos */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -290,21 +351,21 @@
     }
 
     .product-image {
-      background-color: #f2efea;
-      aspect-ratio: 3 / 4;
+      background-color: #f3ede8;
+      aspect-ratio: 1 / 1;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 18px;
       overflow: hidden;
       transition: background-color 0.3s;
-      border-radius: 0; /* cuadrado minimalista */
+      border-radius: 0;
     }
 
     .product-image i {
-      font-size: 60px;
-      color: #cbb9a6;
-      opacity: 0.8;
+      font-size: 64px;
+      color: #c2b2a0;
+      opacity: 0.9;
       transition: transform 0.4s ease;
     }
 
@@ -313,64 +374,70 @@
     }
 
     .product-info h3 {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 500;
       letter-spacing: 0.5px;
       margin-bottom: 4px;
-      color: #1e1e1e;
+      color: #1a1a1a;
+      font-family: 'Cormorant Garamond', serif;
     }
 
     .product-info .price {
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 400;
-      color: #9b8c7c;
+      color: #b8a28e;
       letter-spacing: 0.5px;
+      font-family: 'Cormorant Garamond', serif;
     }
 
-    /* Banner de envío / beneficio */
-    .benefit-banner {
-      background: #1e1e1e;
-      color: #faf9f7;
-      padding: 40px 32px;
+    /* Banner de contacto y dirección */
+    .contact-banner {
+      background: #1a1a1a;
+      color: #fcfaf8;
+      padding: 48px 40px;
       margin: 60px 0 80px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 24px;
-      border-radius: 0;
+      gap: 32px;
     }
 
-    .benefit-item {
+    .contact-item {
       display: flex;
       align-items: center;
-      gap: 16px;
-      flex: 1 1 200px;
+      gap: 18px;
+      flex: 1 1 220px;
     }
 
-    .benefit-item i {
+    .contact-item i {
       font-size: 28px;
-      color: #cbb9a6;
+      color: #c2b2a0;
+      width: 40px;
+      text-align: center;
     }
 
-    .benefit-item p {
+    .contact-item p {
       font-size: 15px;
       font-weight: 300;
       letter-spacing: 0.5px;
+      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
     }
 
-    .benefit-item strong {
+    .contact-item strong {
       font-weight: 500;
       color: #fff;
       display: block;
       font-size: 16px;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
+      font-family: 'Inter', sans-serif;
     }
 
-    /* Footer minimalista */
+    /* Footer */
     footer {
       padding: 48px 0 32px;
-      border-top: 1px solid rgba(0,0,0,0.05);
+      border-top: 1px solid rgba(0,0,0,0.04);
       font-size: 14px;
       color: #6b6b6b;
       display: flex;
@@ -378,6 +445,7 @@
       flex-wrap: wrap;
       gap: 24px;
       align-items: center;
+      font-family: 'Inter', sans-serif;
     }
 
     .footer-links {
@@ -393,7 +461,7 @@
     }
 
     .footer-links a:hover {
-      color: #1e1e1e;
+      color: #1a1a1a;
     }
 
     .social-icons {
@@ -409,7 +477,7 @@
     }
 
     .social-icons i:hover {
-      color: #1e1e1e;
+      color: #b8a28e;
     }
 
     /* Responsive */
@@ -426,39 +494,29 @@
         gap: 16px;
       }
 
-      .hero {
-        padding: 40px 28px;
+      .slide {
+        padding: 48px 32px;
         flex-direction: column-reverse;
         text-align: center;
       }
 
-      .hero p {
+      .slide-text p {
         margin-left: auto;
         margin-right: auto;
       }
 
-      .hero-image {
-        width: 100%;
-        min-height: 200px;
+      .slide-image i {
+        font-size: 100px;
       }
 
-      .hero-image i {
-        font-size: 90px;
-      }
-
-      .banner-secondary {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 24px;
-      }
-
-      .benefit-banner {
+      .contact-banner {
         flex-direction: column;
         align-items: flex-start;
-        gap: 32px;
+        gap: 28px;
+        padding: 40px 28px;
       }
 
-      .benefit-item {
+      .contact-item {
         width: 100%;
       }
 
@@ -474,12 +532,12 @@
       }
 
       .logo {
-        font-size: 22px;
-        letter-spacing: 4px;
+        font-size: 24px;
+        letter-spacing: 3px;
       }
 
       nav a {
-        font-size: 13px;
+        font-size: 12px;
       }
 
       .product-grid {
@@ -487,11 +545,19 @@
       }
 
       .section-title h2 {
-        font-size: 22px;
+        font-size: 24px;
       }
 
-      .hero h1 {
-        font-size: 34px;
+      .slide {
+        padding: 32px 20px;
+      }
+
+      .slide-image i {
+        font-size: 80px;
+      }
+
+      .slide-text h1 {
+        font-size: 32px !important;
       }
     }
   </style>
@@ -501,9 +567,10 @@
   <!-- Header -->
   <header>
     <div class="container header-inner">
-      <a href="#" class="logo">LUNARIA<span>.</span></a>
+      <a href="#" class="logo">AURUM <span>&</span> ARGENTUM</a>
       <nav>
-        <a href="#">Tienda</a>
+        <a href="#">Oro</a>
+        <a href="#">Plata</a>
         <a href="#">Colecciones</a>
         <a href="#">Nosotros</a>
         <div class="nav-icons">
@@ -516,122 +583,169 @@
   </header>
 
   <main>
-    <!-- Banner principal (hero) -->
+    <!-- SLIDER DE BANNERS -->
     <div class="container">
-      <section class="hero">
-        <div class="hero-content">
-          <div class="hero-tag">Nueva temporada</div>
-          <h1>Elegancia <em>en</em> lo simple</h1>
-          <p>Prendas atemporales, tejidos naturales y siluetas que respiran calma.</p>
-          <a href="#" class="btn">Explorar</a>
+      <section class="slider-section">
+        <div class="slider-container" id="slider">
+          <!-- Slide 1: Oro -->
+          <div class="slide slide-1">
+            <div class="slide-text">
+              <div class="hero-tag" style="font-size:14px; letter-spacing:4px; color:#b8a28e; margin-bottom:16px; font-weight:500; font-family:'Inter',sans-serif; text-transform:uppercase;">Colección Oro 18k</div>
+              <h1>Brillo <em>eterno</em> en cada detalle</h1>
+              <p>Piezas atemporales en oro de 18 quilates, diseñadas para acompañarte toda la vida.</p>
+              <a href="#" class="btn">Descubrir</a>
+            </div>
+            <div class="slide-image">
+              <i class="fas fa-gem"></i>
+            </div>
+          </div>
+          <!-- Slide 2: Plata -->
+          <div class="slide slide-2">
+            <div class="slide-text">
+              <div class="hero-tag" style="font-size:14px; letter-spacing:4px; color:#9e9e9e; margin-bottom:16px; font-weight:500; font-family:'Inter',sans-serif; text-transform:uppercase;">Plata 925</div>
+              <h1>Pureza <em>y</em> sofisticación</h1>
+              <p>Elegancia serena en plata esterlina, perfecta para el día a día.</p>
+              <a href="#" class="btn">Explorar</a>
+            </div>
+            <div class="slide-image">
+              <i class="fas fa-ring"></i>
+            </div>
+          </div>
+          <!-- Slide 3: Mixta -->
+          <div class="slide slide-3">
+            <div class="slide-text">
+              <div class="hero-tag" style="font-size:14px; letter-spacing:4px; color:#b8a28e; margin-bottom:16px; font-weight:500; font-family:'Inter',sans-serif; text-transform:uppercase;">Edición limitada</div>
+              <h1>Oro <em>y</em> plata en armonía</h1>
+              <p>Contrastes que celebran la dualidad. Diseños exclusivos para ocasiones únicas.</p>
+              <a href="#" class="btn">Ver ahora</a>
+            </div>
+            <div class="slide-image">
+              <i class="fas fa-crown"></i>
+            </div>
+          </div>
         </div>
-        <div class="hero-image">
-          <i class="fas fa-tshirt"></i>
+        <!-- Dots de navegación -->
+        <div class="slider-dots" id="dots">
+          <button class="dot active" data-index="0"></button>
+          <button class="dot" data-index="1"></button>
+          <button class="dot" data-index="2"></button>
         </div>
       </section>
-    </div>
-
-    <!-- Banner secundario: colección destacada -->
-    <div class="container">
-      <div class="banner-secondary">
-        <h2>Colección <span>Otoño</span> 2025</h2>
-        <a href="#" class="btn">Ver ahora</a>
-      </div>
     </div>
 
     <!-- Sección de productos -->
     <div class="container">
       <div class="section-title">
-        <h2>Esenciales</h2>
+        <h2>Piezas destacadas</h2>
         <a href="#">Ver todo</a>
       </div>
 
       <div class="product-grid">
-        <!-- Producto 1 -->
+        <!-- Producto 1: Anillo oro -->
         <div class="product-card">
           <div class="product-image">
-            <i class="fas fa-vest"></i>
+            <i class="fas fa-ring"></i>
           </div>
           <div class="product-info">
-            <h3>Blazer Lino</h3>
-            <div class="price">$189</div>
+            <h3>Anillo Solitario Oro 18k</h3>
+            <div class="price">S/ 1,890</div>
           </div>
         </div>
-        <!-- Producto 2 -->
+        <!-- Producto 2: Collar plata -->
         <div class="product-card">
           <div class="product-image">
-            <i class="fas fa-tshirt"></i>
+            <i class="fas fa-chain"></i>
           </div>
           <div class="product-info">
-            <h3>Camiseta Pima</h3>
-            <div class="price">$65</div>
+            <h3>Collar Cadena Plata 925</h3>
+            <div class="price">S/ 320</div>
           </div>
         </div>
-        <!-- Producto 3 -->
+        <!-- Producto 3: Aretes oro -->
         <div class="product-card">
           <div class="product-image">
-            <i class="fas fa-shoe-prints"></i>
+            <i class="fas fa-star"></i>
           </div>
           <div class="product-info">
-            <h3>Mocasín Suave</h3>
-            <div class="price">$210</div>
+            <h3>Aretes Gota Oro 18k</h3>
+            <div class="price">S/ 1,250</div>
           </div>
         </div>
-        <!-- Producto 4 -->
+        <!-- Producto 4: Pulsera plata -->
         <div class="product-card">
           <div class="product-image">
-            <i class="fas fa-shopping-bag"></i>
+            <i class="fas fa-link"></i>
           </div>
           <div class="product-info">
-            <h3>Bolso Tote</h3>
-            <div class="price">$145</div>
+            <h3>Pulsera Eslabones Plata 925</h3>
+            <div class="price">S/ 480</div>
           </div>
         </div>
-        <!-- Producto 5 (extra para grid adaptable) -->
+        <!-- Producto 5: Dije oro -->
         <div class="product-card">
           <div class="product-image">
-            <i class="fas fa-socks"></i>
+            <i class="fas fa-heart"></i>
           </div>
           <div class="product-info">
-            <h3>Calcetines Algodón</h3>
-            <div class="price">$18</div>
+            <h3>Dije Corazón Oro 18k</h3>
+            <div class="price">S/ 750</div>
           </div>
         </div>
-        <!-- Producto 6 -->
+        <!-- Producto 6: Anillo plata -->
         <div class="product-card">
           <div class="product-image">
-            <i class="fas fa-hat-cowboy"></i>
+            <i class="fas fa-circle"></i>
           </div>
           <div class="product-info">
-            <h3>Sombrero Lana</h3>
-            <div class="price">$95</div>
+            <h3>Anillo Minimalista Plata 925</h3>
+            <div class="price">S/ 260</div>
+          </div>
+        </div>
+        <!-- Producto 7: Aretes plata -->
+        <div class="product-card">
+          <div class="product-image">
+            <i class="fas fa-moon"></i>
+          </div>
+          <div class="product-info">
+            <h3>Aretes Luna Plata 925</h3>
+            <div class="price">S/ 390</div>
+          </div>
+        </div>
+        <!-- Producto 8: Pulsera oro -->
+        <div class="product-card">
+          <div class="product-image">
+            <i class="fas fa-infinity"></i>
+          </div>
+          <div class="product-info">
+            <h3>Pulsera Infinito Oro 18k</h3>
+            <div class="price">S/ 1,420</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Banner de beneficios / envío -->
+    <!-- Banner de contacto y dirección -->
     <div class="container">
-      <div class="benefit-banner">
-        <div class="benefit-item">
-          <i class="fas fa-truck"></i>
+      <div class="contact-banner">
+        <div class="contact-item">
+          <i class="fas fa-map-pin"></i>
           <div>
-            <strong>Envío gratis</strong>
-            <p>En compras superiores a $150</p>
+            <strong>Visítanos</strong>
+            <p>Urb. Miraflores Las Gardenias #200<br>Castilla - Piura</p>
           </div>
         </div>
-        <div class="benefit-item">
-          <i class="fas fa-undo-alt"></i>
+        <div class="contact-item">
+          <i class="fas fa-phone-alt"></i>
           <div>
-            <strong>Devolución fácil</strong>
-            <p>30 días para cambios</p>
+            <strong>Llámanos</strong>
+            <p>997 810 927</p>
           </div>
         </div>
-        <div class="benefit-item">
-          <i class="fas fa-leaf"></i>
+        <div class="contact-item">
+          <i class="fas fa-clock"></i>
           <div>
-            <strong>Materiales sostenibles</strong>
-            <p>Fibras naturales certificadas</p>
+            <strong>Horario</strong>
+            <p>Lun - Sáb: 10am - 8pm</p>
           </div>
         </div>
       </div>
@@ -652,9 +766,75 @@
       <i class="fab fa-tiktok"></i>
     </div>
     <div class="copyright">
-      © 2025 LUNARIA — Moda consciente
+      © 2025 AURUM & ARGENTUM — Joyería fina
     </div>
   </footer>
+
+  <!-- SCRIPT DEL SLIDER -->
+  <script>
+    (function() {
+      const slider = document.getElementById('slider');
+      const dots = document.querySelectorAll('.dot');
+      const slides = document.querySelectorAll('.slide');
+      let currentIndex = 0;
+      let autoPlayInterval;
+      const totalSlides = slides.length;
+
+      function updateSlider(index) {
+        // Asegurar que el índice esté en rango
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        
+        currentIndex = index;
+        // Mover el slider
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Actualizar dots
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentIndex);
+        });
+      }
+
+      // Avanzar al siguiente slide
+      function nextSlide() {
+        updateSlider(currentIndex + 1);
+      }
+
+      // Iniciar autoplay
+      function startAutoPlay() {
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+        autoPlayInterval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
+      }
+
+      // Detener autoplay
+      function stopAutoPlay() {
+        if (autoPlayInterval) {
+          clearInterval(autoPlayInterval);
+          autoPlayInterval = null;
+        }
+      }
+
+      // Event listeners para los dots
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          updateSlider(i);
+          stopAutoPlay();
+          startAutoPlay(); // reiniciar el temporizador
+        });
+      });
+
+      // Pausar autoplay al pasar el mouse sobre el slider (opcional)
+      const sliderSection = document.querySelector('.slider-section');
+      sliderSection.addEventListener('mouseenter', stopAutoPlay);
+      sliderSection.addEventListener('mouseleave', startAutoPlay);
+
+      // Iniciar autoplay
+      startAutoPlay();
+
+      // Asegurar que el primer slide esté visible al cargar
+      updateSlider(0);
+    })();
+  </script>
 
 </body>
 </html>
